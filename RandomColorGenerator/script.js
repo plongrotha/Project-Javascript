@@ -4,7 +4,16 @@ for (let index = 0; index < 30; index++) {
   colorContainer.classList.add("color-container");
   containerElement.appendChild(colorContainer);
 }
-randomcolor();
+
+const colorContainers = document.querySelectorAll(".color-container");
+generateColors();
+function generateColors() {
+  colorContainers.forEach((colorContainers) => {
+    const newColorCode = randomcolor();
+    console.log(newColorCode);
+  });
+}
+
 function randomcolor() {
   const chars = "0123456789abcdef";
   const colorCodeLenght = 6;
@@ -12,6 +21,6 @@ function randomcolor() {
   for (let index = 0; index < colorCodeLenght; index++) {
     const randomNum = Math.floor(Math.random() * chars.length);
     colorCode += chars.substring(randomNum, randomNum + 1);
-    console.log(colorCode);
+    return colorCode;
   }
 }

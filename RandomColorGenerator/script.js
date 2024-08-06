@@ -1,5 +1,5 @@
 const containerElement = document.querySelector(".container");
-for (let index = 0; index < 1000; index++) {
+for (let index = 0; index < 8; index++) {
   const colorContainer = document.createElement("div");
   colorContainer.classList.add("color-container");
   containerElement.appendChild(colorContainer);
@@ -11,6 +11,7 @@ function generateColors() {
   colorContainers.forEach((colorContainer) => {
     const newColorCode = randomcolor();
     colorContainer.style.backgroundColor = "#" + newColorCode;
+    colorContainer.innerText = "#" + newColorCode;
   });
 }
 
